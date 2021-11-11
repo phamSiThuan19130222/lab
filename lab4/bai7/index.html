@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.6.0.js"></script>
+    <style>
+        button {
+            margin: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div  id="div_body">
+    </div>
+<script>
+    $(function () {
+        var manyButtons = "";
+        var first = 1;
+
+        function generate_button(){
+            for(var i=1;i<65;i++){
+                console.log("call me"+i);
+                manyButtons+="<button class='mybutton' id='"+i+"' >button"+i+"</button>";
+
+            }
+            $("#div_body").html(manyButtons);
+            // for(var i=1;i<65;i++){
+            //     $("#"+i).css();
+            // }
+        }
+        generate_button();
+
+        $(".mybutton").on('click', function() {
+            var myid = this.id;
+            if(myid ==first){
+                console.log("equal?");
+                $("#"+myid).hide();
+
+            }
+            first++;
+        });
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai form 3 bai 6 lab 4</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+          integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <form method="POST">
+        <h4>Account</h4>
+        <div class="input-group">
+            <div class="input-box">
+                <input id="fullname" type="text" placeholder=" Full name" class="name">
+                <i class="fa fa-user icon"></i>
+            </div>
+        </div>
+        <span class="error_form" id="fullname_error_message"></span>
+
+        <div class="input-group">
+
+            <div class="input-box">
+                <input id="nickname" type="text" placeholder="Nick name" required class="name">
+                <i class="fa fa-user icon"></i>
+            </div>
+
+        </div>
+        <span class="error_form" id="nickname_error_message"></span>
+
+        <div class="input-group">
+            <div class="input-box">
+                <input id="email" type="email" placeholder="
+Email adress" required class="name">
+                <i class="fa fa-envelope icon"></i>
+            </div>
+
+        </div>
+        <span class="error_form" id="email_error_message"></span>
+
+        <div class="input-group">
+            <div class="input-box">
+                <h4>Date of Birth</h4>
+                <input id="day" type="text" class="dob" placeholder="DD">
+                <input id="month" type="text" class="dob" placeholder="MM">
+                <input id="year" type="text" class="dob" placeholder="YYYY">
+            </div>
+
+            <div class="input-box">
+                <h4>Gender</h4>
+                <input type="radio" id="b1" name="gendar" checked class="radio">
+                <label for="b1">Male</label>
+                <input type="radio" id="b2" name="gendar" class="radio">
+                <label for="b2">Female</label>
+            </div>
+        </div>
+        <span class="error_form" id="day_error_message"></span>
+        <span class="error_form" id="month_error_message"></span>
+        <span class="error_form" id="year_error_message"></span>
+        <div class="input-group">
+            <div class="input-box">
+                <h4>Payment Details</h4>
+                <input type="radio" name="pay" id="bc1" checked class="radio">
+                <label for="bc1"><span><i class="fa fa-cc-visa"><i style="font-family: Arial, Helvetica,sans-serif">  Credit Card</i></i></span></label>
+                <input type="radio" name="pay" id="bc2" class="radio">
+                <label for="bc2"><span><i class="fa fa-cc-paypal"> <i style="font-family: Arial, Helvetica,sans-serif"> PayPal</i></i></span>
+                </label>
+            </div>
+        </div>
+        <div class="input-group">
+            <div class="input-box">
+                <input id="card-number" type="tel" placeholder="Card Number" required class="name">
+                <i class="fa fa-credit-card icon"></i>
+            </div>
+        </div>
+        <span class="error_form" id="cardnumber_error_message"></span>
+
+        <div class="input-group">
+            <div class="input-box">
+                <input id="card-cvc" type="tel" placeholder="Card CVC" required class="name">
+                <i class="fa fa-user icon"></i>
+            </div>
+            <div class="input-box">
+                <select>
+                    <option value="">01 jun</option>
+                    <option value="">02 jun</option>
+                    <option value="">03 jun</option>
+                </select>
+                <select>
+                    <option value="">2020</option>
+                    <option value="">2021</option>
+                    <option value="">2022</option>
+                </select>
+            </div>
+        </div>
+        <span class="error_form" id="cardcvc_error_message"></span>
+
+        <div class="input-group">
+            <div class="input-box">
+                <h4>Terms and conditions</h4>
+                <p id="pd">i accep terms and conditions for signed up to this service, and therby confirm i have read
+                    the privacy policy</p>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    $(function () {
+        $("#fullname_error_message").hide();
+        $("#nickname_error_message").hide();
+        $("#email_error_message").hide();
+        $("#day_error_message").hide();
+        $("#month_error_message").hide();
+        $("#year_error_message").hide();
+        $("#card-number_error_message").hide();
+        $("#cardcvc_error_message").hide();
+
+        var error_fullname = false;
+        var error_email = false;
+        var error_day = false;
+        var error_month = false;
+        var error_year = false;
+        var error_card_number = false;
+        var error_card_cvc = false;
+
+
+        $("#fullname").focusout(function () {
+            check_fname();
+        });
+        $("#nickname").focusout(function () {
+            check_nick_name();
+        });
+
+        $("#email").focusout(function () {
+            check_email();
+        });
+        $("#day").focusout(function () {
+            check_day();
+        });
+        $("#month").focusout(function () {
+            check_month();
+
+        });
+        $("#year").focusout(function () {
+            check_year();
+        });
+        $("#card-number").focusout(function () {
+            check_card_number();
+        });
+        $("#card-cvc").focusout(function () {
+            check_card_cvc();
+        });
+
+        function check_fname() {
+            var pattern = /^[^0-9]*$/;
+            var fname = $("#fullname").val();
+            console.log("see value:-" + fname);
+            if (pattern.test(fname) && fname !== '') {
+                $("#fullname_error_message").hide();
+                $("#fullname").css("border", "2px solid #34F458");
+            } else {
+                $("#fullname_error_message").html("Should contain only Characters");
+                $("#fullname_error_message").show();
+                $("#fullname").css("border", "2px solid #F90A0A");
+                error_fullname = true;
+            }
+        }
+
+        function check_nick_name() {
+            var pattern = /^[a-zA-Z]*$/;
+            var fname = $("#nickname").val();
+            console.log("see value:-" + fname);
+            if (pattern.test(fname) && fname !== '') {
+                $("#nickname_error_message").hide();
+                $("#nickname").css("border", "2px solid #34F458");
+            } else {
+                $("#nickname_error_message").html("Should contain only Characters");
+                $("#nickname_error_message").show();
+                $("#nickname").css("border", "2px solid #F90A0A");
+                error_nickname = true;
+            }
+        }
+        function check_email() {
+            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var email = $("#email").val();
+            if (pattern.test(email) && email !== '') {
+                $("#email_error_message").hide();
+                $("#email").css("border","2px solid #34F458");
+            } else {
+                $("#email_error_message").html("Invalid Email");
+                $("#email_error_message").show();
+                $("#email").css("border","2px solid #F90A0A");
+                error_email = true;
+            }
+        }
+        function check_day(){
+            var day = $("#day").val();
+            if($.isNumeric(day)&&day<32 && day>0){
+                $("#day_error_message").hide();
+                $("#day").css("border","2px solid #34F458");
+            }else {
+                $("#day_error_message").html("invalid day");
+                $("#day_error_message").show();
+                $("#day").css("border","2px solid #F90A0A");
+                error_day = true;
+            }
+        }
+        function check_month(){
+            var month = $("#month").val();
+            if($.isNumeric(month)&&month<13 && month>0){
+                $("#month_error_message").hide();
+                $("#month").css("border","2px solid #34F458");
+            }else {
+                $("#month_error_message").html("invalid month");
+                $("#month_error_message").show();
+                $("#month").css("border","2px solid #F90A0A");
+                error_month = true;
+            }
+        }
+        function check_year(){
+            var year = $("#year").val();
+            if($.isNumeric(year)&&year<300000 && year>1900){
+                $("#year_error_message").hide();
+                $("#year").css("border","2px solid #34F458");
+            }else {
+                $("#year_error_message").html("invalid year");
+                $("#year_error_message").show();
+                $("#year").css("border","2px solid #F90A0A");
+                error_year = true;
+            }
+        }
+        function check_card_number(){
+            var pattern = /^[0-9]{4}-[0-9]{4}-[0-9]{4}$/;
+            var card_number = $("#card-number").val();
+            if (pattern.test(card_number) && card_number !== '') {
+                $("#cardnumber_error_message").hide();
+                $("#card-number").css("border","2px solid #34F458");
+            } else {
+                $("#cardnumber_error_message").html("Invalid card-number: must be xxxx-xxxx-xxxx");
+                $("#cardnumber_error_message").show();
+                $("#card-number").css("border","2px solid #F90A0A");
+                error_card_number = true;
+            }
+        }
+       function check_card_cvc(){
+           var pattern = /^[0-9]{4}$/;
+           var card_number = $("#card-cvc").val();
+           if (pattern.test(card_number) && card_number !== '') {
+               $("#cardcvc_error_message").hide();
+               $("#card-cvc").css("border","2px solid #34F458");
+           } else {
+               $("#cardcvc_error_message").html("Invalid card-number: must be xxxx");
+               $("#cardcvc_error_message").show();
+               $("#card-cvc").css("border","2px solid #F90A0A");
+               error_card_cvc = true;
+           }
+       }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task 2</title>
+</head>
+<body>
+    <h1> test phương trình bậc 2</h1>
+    <p> ax2 +bx+c =0 => x1=? x2=?</p>
+    <input id = "a" type="text" value="2" placeholder="enter a "> </input>
+    <input id = "b" type="text" value="-7" placeholder="enter b "> </input>
+    <input id = "c" type="text" value="1" placeholder="enter c "> </input>
+    <button type="button" onclick="result()"> solve</button>
+    <p id="result">result is: </p>
+    <script>
+        function result(){
+            //receive variables
+            let a = document.getElementById('a').value;
+            let b = document.getElementById('b').value;
+            let c = document.getElementById('c').value;
+
+            // calculate discriminant
+            let discriminant = b * b - 4 * a * c;
+            // let z = prompt("denta: "+discriminant);
+            var x1,x2;
+            var result;
+
+            if(discriminant>0){
+                x1 = (-b+Math.sqrt(discriminant))/(2*a);
+                x2 = (-b-Math.sqrt(discriminant))/(2*a);
+                // result = document.createTextNode("x1= "+x1+", x2= "+x2);
+                result ="x1= "+x1+", x2= "+x2;
+            } else if(discriminant==0){
+                x1=(-b)/(2*a);
+                x2 = x1;
+                // result = document.createTextNode("x1= "+x1+", x2= "+x2);
+                result ="x1= "+x1+", x2= "+x2;
+            }else{
+                // result = document.createTextNode("no x found!");
+                result ="no x found!";
+            }
+            document.getElementById('result').innerHTML="result is: "+result;
+        }
+    </script>
+</body>
+</html>

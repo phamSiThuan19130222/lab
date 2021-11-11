@@ -1,0 +1,51 @@
+
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #8b0101;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+.menu-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+.menu-area  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-area  ul li{
+    position: relative;
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.menu-area  ul li .dropdown{
+    left: -50%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+.active, .menu-area  ul .first:hover{
+    background-color: #8b0101;
+    color: white;
+    transition: 0.3s;
+}
+.sub-menu-1{
+    display: none;
+}
+.menu-area  ul .first:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    left: -30%;
+    color: black;
+}
+.menu-area  ul .first:hover .sub-menu-1 ul{
+    display: block;
+}
+

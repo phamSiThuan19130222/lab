@@ -1,0 +1,298 @@
+html, body {
+    height: 100%;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', Sans-serif;
+}
+
+header {
+    background-color: #f3f2f2;
+
+}
+
+header .container {
+    margin: 0px;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header .container img {
+    cursor: pointer;
+}
+
+header .container a {
+    text-decoration: none;
+    background-color: #f67925;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav {
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+nav .menu ul li a {
+    text-decoration: none;
+    margin: 10px 40px 10px 0px;
+    font-weight: bold;
+    color: #818384;
+}
+
+nav .social-media ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+nav .social-media ul li a {
+    text-decoration: none;
+    margin: 10px 20px 10px 0px;
+    font-weight: bold;
+    font-size: x-large;
+    color: #818384;
+}
+
+.banner {
+    height: 100%;
+    background-color: #f3f2f2;
+}
+
+.banner .container {
+    padding: 80px 100px;
+    height: 100%;
+}
+
+.banner .container .real-container {
+    position: relative;
+    background-image: url("images/main/image-1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 7px;
+    height: 100%;
+}
+
+.banner .container .real-container .left {
+    position: absolute;
+    top: 40%;
+    left: 2%;
+    cursor: pointer;
+}
+
+.banner .container .real-container .right {
+    position: absolute;
+    top: 40%;
+    right: 2%;
+    cursor: pointer;
+
+}
+
+.banner .container .real-container .overlay {
+    position: absolute;
+    top: 60%;
+    background: linear-gradient(0deg, #000000, transparent);
+    width: 100%;
+    height: 40%;
+}
+
+.banner .container .real-container .infor {
+    position: absolute;
+    left: 3%;
+    top: 70%;
+    color: white;
+}
+
+.service {
+    padding: 60px 100px 30px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service .service-card {
+    text-align: center;
+}
+
+.service .service-card img {
+    border-radius: 50%;
+}
+
+.service .service-card .content {
+    padding: 10px 55px 10px 55px;
+}
+
+.service .service-card .content h2 {
+    font-weight: bold;
+}
+
+.service .service-card .content p {
+    padding: 10px 20px 10px 20px;
+}
+
+.service .service-card .content .service-btn {
+    margin: 20px;
+}
+
+.service .service-card .content .service-btn a {
+    text-decoration: none;
+    color: white;
+    background-color: #ff8932;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+}
+
+.ticket {
+    background-color: #f3f2f2;
+}
+
+.ticket .container {
+    padding: 10px 100px 40px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticket .container .ticket-card {
+    border: 1px #6c757d solid;
+    margin: 20px;
+    text-align: center;
+    padding: 10px 55px 10px 55px;
+}
+
+.ticket .container .ticket-card h1 {
+    color: #6fd2ef;
+    margin: 10px;
+}
+
+.ticket .container .ticket-card h3 {
+    margin: 5px 0px 10px 0px;
+}
+
+.ticket .container .ticket-card p {
+    padding: 10px 0px;
+}
+
+.ticket .container .ticket-card .ticket-btn {
+    margin: 20px 0px;
+}
+
+.ticket .container .ticket-card .ticket-btn a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    background-color: #ff8932;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+}
+
+.get-ticket {
+    background-color: #191818;
+    text-align: center;
+    color: white;
+}
+
+.get-ticket .container {
+    padding: 60px 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.get-ticket .container .form-ticket {
+    width: fit-content;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.get-ticket .container .form-ticket h1 {
+    margin-top: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.get-ticket .container .form-ticket p {
+    margin: 10px;
+    padding: 0px 10px;
+}
+
+.get-ticket .container .form-ticket input {
+    width: 90%;
+}
+
+.get-ticket .container .form-ticket .subcribe-btn {
+    margin: 30px;
+}
+
+.get-ticket .container .form-ticket a {
+    margin: 10px 0px 60px 0px;
+    padding: 15px 10px;
+    background-color: #2b7feb;
+    width: 90%;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+footer {
+    background-color: black;
+}
+
+footer .container {
+    padding: 10px 100px 10px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+footer .container .left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+footer .container .right ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+footer .container .right ul li{
+    list-style: none;
+    margin: 7px;
+}
+
+footer .container .right ul li a{
+    color: #818384;
+    text-decoration: none;
+}
+
+
+
+

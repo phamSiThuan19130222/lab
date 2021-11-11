@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 4 lab4</title>
+</head>
+<body>
+<h1> check contain String</h1>
+<textarea id="data" name="" id="" cols="30" rows="10">'The quick brown fox jumps over the lazy dog. If the  barked, was it really lazy?'</textarea>
+<input id="check" type="input text to compare" placeholder="input text to compare" value="dog">
+<button onclick="java()"> check</button>
+<p id="result">where is reult</p>
+<script>
+
+
+    function java() {
+        var check = document.getElementById('check').value;
+        var data = document.getElementById('data').value;
+
+        let number_equal = 0;
+        let index = 0;
+        let position = -1;
+
+        do {
+            index = data.indexOf(check, position + 1);
+            if (index == -1) {
+                break;
+            }
+            number_equal++;
+            position = index;
+        } while (true);
+
+        var result = document.getElementById('result').innerHTML = "number contain is: " + number_equal;
+    }
+</script>
+</body>
+</html>

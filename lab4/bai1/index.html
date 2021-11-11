@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+
+  <div class="muli-btn" >
+      <button style="color: red"onclick="change_color_function('red')"> red</button>
+      <button style="color: blue" onclick="change_color_function('blue')"> blue</button>
+      <button style="color: green"  onclick="change_color_function('green')"> green</button>
+      <button style="color: yellow"  onclick="change_color_function('yellow')"> yellow</button>
+      <button style="color: orange"  onclick="change_color_function('orange')"> orange</button>
+      <button style="color: pink"  onclick="change_color_function('pink')"> pink</button>
+
+      <p id="demo">something happen</p>
+  </div>
+
+  <script>
+      document.getElementById("demo").innerHTML = 5 + 6;
+  </script>
+  <script>
+      function change_color_function(color){
+         document.body.style.background =color;
+      }
+
+      let variable1;
+      variable1 = 3;
+      document.getElementById('zero').innerHTML="my result: "+variable1;
+
+  </script>
+</body>
+</html>

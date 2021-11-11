@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 5 lab4</title>
+    <script src="jquery-3.6.0.js"></script>
+    <!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <style>
+        .nav {
+            background-color: #878a8f;
+            padding: 20px;
+            margin: 10px 0px;
+        }
+
+        .nav h1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav .btn-m {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .av .btn-m button {
+            margin: 10px;
+        }
+
+        .put-center {
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            align-items: center;
+        }
+
+        .container {
+            border: 1px solid #0d6efd;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .parent {
+            background: #0d6efd;
+            padding: 10px;
+            width: auto;
+        }
+
+        p {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <h1> let's have fun</h1>
+    <div class="btn-m">
+        <button id="btn1">button 1</button>
+        <button id="btn2">button 2</button>
+        <button id="btn3">button 3</button>
+        <button id="btn4">button 4</button>
+        <button id="btn5">button 5</button>
+    </div>
+</div>
+<div class="put-center">
+    <div id="div1" class="container">
+        <div class="parent">
+            #parent1
+        </div>
+        <p>content 1</p>
+    </div>
+    <div id="div2" class="container">
+        <div class="parent">
+            #parent2
+        </div>
+        <p>content 2</p>
+    </div>
+    <div id="div3" class="container">
+        <div class="parent">
+            #parent3
+        </div>
+        <p>content 3</p>
+    </div>
+    <div id="div4" class="container">
+        <div class="parent">
+            #parent4
+        </div>
+        <p>content 4</p>
+    </div>
+    <div id="div5" class="container">
+        <div class="parent">
+            #parent5
+        </div>
+        <p>content 5</p>
+    </div>
+</div>
+<script>
+    $(function () {
+
+        $("#btn1").on("click", function () {
+            $("#div1 p").html("change value at parent 1");
+        });
+
+        // $("#div1").slideUp(1000).slideDown(1000);
+        // $("#btn1").html("change button");
+        // $("#btn1").on("mouseover", function () {
+        //     $('#div1').fadeToggle(500);
+        // });
+
+        // $("#btn2").on("mouseover", function () {
+        //     $('#div2').fadeToggle(500);
+        // });
+        // $("#btn3").on("mouseover", function () {
+        //     $('#div3').fadeToggle(500);
+        // });
+        // $("#btn4").on("mouseover", function () {
+        //     $('#div4').fadeToggle(500);
+        // });
+        // $("#btn5").on("mouseover", function () {
+        //     $('#div5').fadeToggle(500);
+        // });
+    });
+</script>
+</body>
+</html>
